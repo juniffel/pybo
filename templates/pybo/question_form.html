@@ -16,7 +16,7 @@
 {% block content %}
     <div class="container">
         <h5 class="my-3 border-bottom pb-2">질문등록</h5>
-        <form action="" method="post">
+        <form action="" method="post" class = "bg-dark">
             {% csrf_token %}
             {% if form.errors %}
             <div class="alert alert-danger" role='alert'>
@@ -32,11 +32,11 @@
             {% endif %}
             <div class="mb-3">
                 <label for="subject" class="form-label">제목</label>
-                <input type="text" class="form-control" name='subject' id="subject" value="{{form.subject.value|default_if_none:''}}">
+                <input type="text" class="form-control text-light bg-dark" name='subject' id="subject" value="{{form.subject.value|default_if_none:''}}">
             </div>
             <div class="mb-3">
                 <label for="content" class="form-label">내용</label>
-                <textarea name="content" id="content" class="form-control" row="10">{{form.content.value|default_if_none:''}}</textarea>
+                <textarea name="content" id="content" class="form-control text-light bg-dark" row="10">{{form.content.value|default_if_none:''}}</textarea>
             </div>
             <button type='submit' class="btn btn-primary">저장하기</button>
         </form>

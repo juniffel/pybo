@@ -21,7 +21,9 @@ class AnswerForm(forms.ModelForm):
     class Meta:
         model = Answer
         fields = ['content']
+        # widgets = {
+        #     'content':forms.Textarea(attrs={'class':'text-light bg-dark'}),
+        # }
         labels={
             'content':'답변내용'
         }
-        
